@@ -1,0 +1,658 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cs" xml:lang="cs">
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Application scope v PHP | Věstn&iacute;k misantropizace</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/sites/misantrop.info/files/barron_favicon.ico" type="image/x-icon" />
+    <link type="text/css" rel="stylesheet" media="all" href="/modules/aggregator/aggregator.css?7" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/node/node.css?7" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/defaults.css?7" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system.css?7" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system-menus.css?7" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/tagadelic/tagadelic.css?7" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/user/user.css?7" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/views/css/views.css?7" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/addtoany/addtoany.css?7" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/comment/comment.css?7" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/misantrop.cz/themes/barron/style.css?7" />
+    <link rel="stylesheet" href="http://www.misantrop.info/sites/misantrop.info/themes/barron/print.css" type="text/css" media="print" charset="utf-8" />
+    <script type="text/javascript" src="/misc/jquery.js?7"></script>
+<script type="text/javascript" src="/misc/drupal.js?7"></script>
+<script type="text/javascript" src="/sites/misantrop.info/files/languages/cs_752600b7e6fe514d39e9f24f626d1cc1.js?7"></script>
+<script type="text/javascript" src="/modules/disqus/disqus.js?7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "disqus": { "url": "http://www.misantrop.cz/node/190", "title": "Application scope v PHP", "identifier": "node/190", "shortname": "misantrop" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var a2a_config=a2a_config||{},da2a={done:false,html_done:false,script_ready:false,script_load:function(){var a=document.createElement('script'),s=document.getElementsByTagName('script')[0];a.type='text/javascript';a.async=true;a.src='http://static.addtoany.com/menu/page.js';s.parentNode.insertBefore(a,s);da2a.script_load=function(){};},script_onready:function(){da2a.script_ready=true;if(da2a.html_done)da2a.init();},init:function(){for(var i=0,el,target,targets=da2a.targets,length=targets.length;i<length;i++){el=document.getElementById('da2a_'+(i+1));target=targets[i];a2a_config.linkname=target.title;a2a_config.linkurl=target.url;if(el)a2a.init('page',{target:el});da2a.done=true;}}};a2a_config.tracking_callback=['ready',da2a.script_onready];
+//--><!]]>
+</script>
+    <!--[if lte IE 7]>
+    <style type="text/css" media="all">@import "/sites/misantrop.cz/themes/barron/ie-fixes.css";</style>
+    <![endif]-->
+    <link rel="openid.server" href="http://www.myopenid.com/server" />
+    <link rel="openid.delegate" href="http://adent.myopenid.com/" />
+    <link rel="openid2.local_id" href="http://adent.myopenid.com" />
+    <link rel="openid2.provider" href="http://www.myopenid.com/server" />
+    <meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="header">
+        <div id="nav">
+                      <ul class="links"><li class="menu-611 first"><a href="http://astore.amazon.com/new-web-20" title="Programátorské knihy v angličtině pro váš Kindle">Kindle KNIHY</a></li>
+<li class="menu-556"><a href="http://strucny.misantrop.info/" title="Krátké postřehy z Posterous">Stručný Misantrop</a></li>
+<li class="menu-173"><a href="http://www.misantrop.info/index-old.php" title="">Archiv 07-08</a></li>
+<li class="menu-278"><a href="http://blog.maly.cz" title="Převážně neškodný">Archiv 03-05</a></li>
+<li class="menu-171"><a href="http://www.maly.cz/" title="">O mně</a></li>
+<li class="menu-547"><a href="http://www.misantrop.info/pravidla-mostarny" title="Pravidla moštárny">O těchto stránkách</a></li>
+<li class="menu-559"><a href="http://www.misantrop.info/contact" title="Kontakt">Kontakt</a></li>
+<li class="menu-170 last"><a href="http://www.misantrop.info" title="">Domů</a></li>
+</ul>                  </div><!-- /nav -->
+        <div id="logo-wrapper">
+                    <h1 class="site-name"><a href="/" title="Domů">Věstník misantropizace</a></h1>                  </div><!-- /logo-wrapper-->
+      </div><!-- /header-->
+
+      <div id="content">
+                <div class="breadcrumb"><a href="/">Domů</a></div>        <h2 class="page-title">Application scope v PHP</h2>
+        <div class="tabs"></div>
+                	      <div id="block-block-17" class="clear-block block block-block">
+
+
+  <div class="content"><!-- Kontextová reklama Sklik -->
+<div id="sklikReklama_1989"></div>
+<script type="text/javascript">
+    var sklikData = { elm: "sklikReklama_1989", zoneId: 1989, w: 468, h: 80 };
+</script>
+<script type="text/javascript" src="http://out.sklik.cz/js/script.js"></script></div>
+</div>
+          <div id="node-190" class="node">
+
+
+  
+    
+    
+  <span class="submitted">
+        10. 03. 2010  </span>
+    
+    
+      <div class="taxonomy">
+      Kategorie: <ul class="links inline"><li class="taxonomy_term_272 first"><a href="/stitky/php" rel="tag" title="">PHP</a></li>
+<li class="taxonomy_term_124"><a href="/stitky/programovani" rel="tag" title="">programování</a></li>
+<li class="taxonomy_term_41"><a href="/stitky/web" rel="tag" title="">web</a></li>
+<li class="taxonomy_term_5 last"><a href="/kategorie/o-programovani" rel="tag" title="">O programování</a></li>
+</ul>    </div>
+      
+  <div class="content">
+    <p>Po čase zase jeden článek o programování v PHP - spíš takové nadhození jednoho problému než jeho řešení...</p>
+
+<p>Stručné intro: Aplikace na webovém serveru nemá, pokud je napsána třeba v Javě nebo "něčem podobném", problém se svým vlastním stavem. Tedy že o sobě v každém okamžiku ví, co je, co dělá a čím je. Nemusí přemýšlet, jestli je to ona sama nebo svoje sestra, protože v systému je jen ona. Byť má spuštěno mnoho obslužných vláken, byť běží jako víc procesů, vždycky má nějaký základ ("kontejner"), kde se všechny její kousky sbíhají a kde mohou komunikovat.</p>
+<p>Aplikace v PHP tohle neví. Na serveru s aplikací v PHP plní úlohu toho kontejneru HTTP server (Apache třeba), který si podle potřeby volá PHP interpret a předává mu potřebné parametry, tedy hlavně cestu ke skriptu, který je potřeba provést. Aplikace v PHP tedy není monolit s jednou hlavou a mnoha chapadélky - jsou to jen ta chapadélka. A nic víc programátor nevidí.</p>
+<p>Ono to většinu času nevadí. Renomovaní odborníci na Rootu odhadují, že 94.7135% aplikací v PHP nikdy nepotřebuje mít něco, co by bylo v celé aplikaci, nehledě na to kolik žádostí je právě obsluhováno, jednou a jen jednou (a pokud možno furt - PHP je taková kvantová technologie: <i>běží jen když se někdo dívá</i>).</p>
+<p>K čemu že taková věc je? No, třeba - počet přihlášených uživatelů. Pokud chcete spočítat přihlášené uživatele, musí se jednotlivá vlákna shodnout na jednom místě, kde si budou dělat čárky za každý login...</p>
+<p>Leckoho napadne: <b>Vždyť máme společný bod - databázi! Ta si řeší konkurenční přístupy, tam to půjde! </b>Udělá si tabulku, do ní si poznačí, kdo že je přihlášen, každé vlákno, které provede "login.php", tam cosi zapíše, podle nějakého pravidla se zase odhlášení (či "odpadlí") odepíší, a když budeme chtít vědět, kolik máme přihlášených, tak to prostě spočítáme.</p>
+<p>Drsnější udělají to, že spočítají počet session souborů v adresáři /temp (pokud tedy session dostanou jen přihlášení). Nemusí se starat o expiraci a podobná zvěrstva a mají to bajvoko přesně.</p>
+<p>Tak to by šlo. Sice to není kdovíjak pohodlné, ale nešť. Co dál?</p>
+<p>Dál třeba fronty. Příklad: Uděláte službu, kam půjde nahrát fotografie. Služba si ji uloží a udělá s ní něco... blíže nespecifikovaného... což ovšem trvá třeba minutu. Nebo pět. Nemůžeme nechat uživatele čekat minutu koukat na stahovanou stránku, protože ji zavře. Musíme to udělat jako na YouTube, kde po uploadu může uživatel normálně pracovat, a video se zatím NA POZADÍ nějak zpracovává.</p>
+<p>Takže jde o to, aby uživatel mohl něco nahrát, uploadovací skript vzít data, dát je do fronty "ZPRACOVAT" - a jede se dál, až to zpracují, tak to zpracují. Jak to udělat?</p>
+<p>Tak, šlo by, že by skript vytvořil nový asynchronní proces na úrovni OS, s nízkou prioritou, a nečekal na jeho dokončení. To je cesta, ale přináší to některé problémy - pokud je zpracování náročné nebo pokud nějak zapisuje do společného prostoru, tak to není nejšťastnější řešení. Procesy se budou hromadit, budou si navzájem překážet, zamykat si přístup...</p>
+<p>Lepší bude udělat frontu - něco jako v automyčce. Přijede auto a obsluha ho pošle do fronty. Jeden nezávislý proces ("myčka") pak dělá stále dokola to, že bere toho kdo je na řadě, udělá potřebné operace, vypustí ho ven a bere dalšího. Pokud ve frontě nikdo není, tak čeká.</p>
+<p>A jsme zase u toho společného prostoru. Jasně, společná fronta se dá simulovat databází, to není problém, a pak nějak spustíme jedno vlákno, kde bude běhat ten proces stále dokola a dokola a... Aha, a v PHP to uděláme jak?</p>
+<p>Ještě odbočím: Asynchronní komunikaci mezi vlákny a "společný datový prostor pro celou aplikaci" lze nasimulovat nejen pomocí databáze, ale i třeba dnes velmi populárním memcache - tento způsob má tu nespornou výhodu, že je rychlý.</p>
+<p>Vrátím se k tomu jednomu univerzálnímu společnému obslužnému procesu v PHP. K němu se váže několik otázek:</p>
+<p>1. Jak ho spustit?</p>
+<p>2. Jak ho udržet naživu?</p>
+<p>3. Jak ho spustit jen jednou?</p>
+<p>---</p>
+<p>Přiznám se rovnou, že <i>správné odpovědi </i>neznám. Kdysi jsem ale tuhle úlohu řešil, tak mám pár poznatků.</p>
+<p>Řešil jsem na Bloguje přidávání příspěvků pomocí ICQ. Pokud jste někdy viděli protokol ICQ zblízka, dáte mi za pravdu, že se s ním moc kouzlit nedá. Poslat po ICQ zprávu ještě jde, ale přijímat...?</p>
+<p>Nakonec jsem tedy objevil, jak se přihlásit a přijmout zprávu, co čeká ve frontě. První nápad byl, že tedy udělám skript, který přesně tohle provede, stáhne zprávy, uloží je do databáze, a šmytec. Když jej budu volat dostatečně často, třeba každou minutu, tak to bude to pravé ořechové.</p>
+<p>Což fungovalo perfektně - prvních pět minut. Pak server oznámil "too many login attempts" a zablokoval přístup na další hodinu. Tudy cesta nevedla a musel jsem jít opravdu cestou jednoho jediného skriptu, který se jednou přihlásí a pak bude cyklicky kontrolovat zprávy a pracovat jak pilná včelka...</p>
+<p>Bohužel, cesta nějakého Pythonu, vlastního programu či "nice ./blabla.pl &amp;" nešla jednoduše použít, tak nezbylo, než to opravdu celé smontovat v PHP.</p>
+<p>Udělat nekonečnou smyčku není problém. Problém je udržet ji při životě a neumřít tím server. Na udržení při životě jsem použil nastavení velkého timeoutu (a to přímo v ní), na to, aby server taky dělal něco jiného a ne jen rotoval uvnitř nekonečné smyčky jsem použil, tuším, sleep(). Problém jak skript spustit právě jednou jsem neřešil, použil jsem metodu "zavolám to sám wgetem".</p>
+<p>A vše fungovalo, krásně a perfektně. Hurá. Po pěti hodinách to celé ovšem zabředlo. Proces žil, ale neběžel, spíš se jen tak klepal... Nakonec jsem sáhnul k metodě "Pán jeskyně" - k CRONem spouštěnému procesu, co každé dvě hodiny výše jmenovaný PHP proces natvrdo zabil a vytvořil nový.</p>
+<p>---</p>
+<p>Ne, to rozhodně není hezký způsob, jak to v PHP řešit. Podle Jakuba Vrány takové řešení, které by umožňovalo vytvářet podobné "PHP daemony" na <i>obecném webserveru</i> (tedy i "Troška lepší sdílený hosting") čistě, snad ani neexistuje (jestli jsem Jakuba dobře pochopil, jestli ne, tak se omlouvám). Čisté řešení je "napsat to v něčem jiném, co na hostingu je".</p>
+<p>A teď se zeptám (a povolím komentáře): <b>Řešili jste už někdy v PHP něco, co by bylo nejlépe řešitelné pomocí neustále běžícího procesu, "singletonu"</b> (proces, který běží vždy jen v jedné kopii)<b> a pomocí společného aplikačního prostoru? A jak jste to řešili?</b></p>
+<p>---</p>
+<p>Komentáře k věci:</p>
+<p><a href="http://foglcz.posterous.com/demonicke-php-v-pasti">Démonické PHP v pasti</a> - popis zajímavého UNIXového hacku, který řeší "neustálý běh".<b><br /></b></p>
+  </div>
+
+  
+      <div class="nodeLinks">
+      <ul class="links inline"><li class="addtoany first last"><span>
+		<a class="da2a_button" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.misantrop.cz%2Fapplication-scope-v-php&amp;linkname=Application%20scope%20v%20PHP" id="da2a_1"><img src="/modules/addtoany/images/share_save_171_16.png" width="171" height="16" alt="Sdílet"/></a>
+		<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+da2a.script_load();
+//--><!]]>
+</script>
+		</span></li>
+</ul>    </div>
+    
+</div><div id="comments"><h2 class="comments">Komentáře</h2><a id="comment-2844"></a>
+<div class="comment comment-published odd">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2844" class="active">Setkal jsem se v praxi s</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel gogloid (bez ověření) dne 10. Březen 2010 - 17:30.      </div>
+
+  <div class="content">
+    <p>Setkal jsem se v praxi s konverzí videa na serveru, kde se to ale řešilo skrz rouru v UNIX-like systému (PHP připsalo do roury a nezávislý proces ji zpracovával).</p>
+<p>Napadá mě, jestli by k řešení přímo tohoto problému s vyzvedáváním zpráv nešlo využít permanentní spojení (<a href="http://www.php.net/manual/en/function.pfsockopen.php" title="http://www.php.net/manual/en/function.pfsockopen.php">http://www.php.net/manual/en/function.pfsockopen.php</a>)? V ten okamžik by nebyl problém s "Too many login attempts", protože by to spojení bylo "na pozadí" otevřené a v okamžiku, kdy by skript požádal o spojení, tak by dostal již toto otevřené (permanentní) spojení. Není to vyžadovaný "singleton", ale myslím, že smysl to má.</p>
+<p>IMHO řešením "singletonu" v některých případech by bylo to, že by se celá aplikace serializovala a v pravidelných intervalech (buď volané CR0Nem nebo by se po dokončení každého (či některých) dotazů na server kontrolovalo, zda-li už je čas) deserializovala a zavolala vyžádaná činnost. Problémy by tam samozřejmě byly (třeba s přesným časováním), ale čistější řešení mě nenapadá.</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div><a id="comment-2845"></a>
+<div class="comment comment-published even">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2845" class="active">PHP není jen pro web</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel Honza B. (bez ověření) dne 10. Březen 2010 - 18:01.      </div>
+
+  <div class="content">
+    <p>PHP je naštěstí (bohužel?) taky úplně obyčejný skriptovací jazyk, jehož intepretr není závislý na přítomnosti webového serveru a není omezen jen na použití na webu. Není žádný problém napsat v PHP daemon stejně jako v Pythonu, Perlu, Ruby, či jakémkoliv jiném intepretovaném jazyce. Stačí vygooglit "PHP daemon" :-) Pěkně jednoduše to popisují zde: <a href="http://kevin.vanzonneveld.net/techblog/article/create_daemons_in_php/" title="http://kevin.vanzonneveld.net/techblog/article/create_daemons_in_php/">http://kevin.vanzonneveld.net/techblog/article/create_daemons_in_php/</a> i s připravenou knihovnou pro psaní daemonů v PHP.</p>
+<p>Předpokládám, že se ozve nějaký komentátor, který bude argumentovat tím, že na většině webhostingů je to prakticky nepoužitelné (např. nespustitelné kvůli nemožnosti připojit se na SSH). Naštěstí existují i zahraniční webhostingy a případně levné VPS :-)</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div><div class="indented"><a id="comment-2847"></a>
+<div class="comment comment-published odd">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2847" class="active">S tím souhlasím, já si v PHP</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel Arthur Dent dne 10. Březen 2010 - 18:14.      </div>
+
+  <div class="content">
+    <p>S tím souhlasím, já si v PHP píšu CLI skripty pro Win, když jsem líný hledat nějakou jednorázovou utilitu anebo pouštět C# - JENŽE! :) Vážně by se mi líbilo, kdyby pro něco takového existovala podpora a ne hack.</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div><div class="indented"><a id="comment-2857"></a>
+<div class="comment comment-published even">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2857" class="active">Omezení technologie</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel <a href="http://rarous.net/" rel="nofollow">Aleš Roubíček</a> (bez ověření) dne 11. Březen 2010 - 10:22.      </div>
+
+  <div class="content">
+    <p>Je to omezení technologie, pokud potřebuješ něco víc musíš si vybrat technologii, která to umožňuje. FB je taky udělaný v PHP, ale to slouží hlavně pro ksicht aplikace. Zbytek jsou věci v C (nebo z PHP do C přeložené) v Erlangu a kdo v čem ještě. :) PHP nikdy nebylo koncipováno na webové aplikace.</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div></div></div><a id="comment-2846"></a>
+<div class="comment comment-published odd">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2846" class="active">Řeším obdobné věci poměrně</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel Honza Hejdrych (bez ověření) dne 10. Březen 2010 - 18:08.      </div>
+
+  <div class="content">
+    <p>Řeším obdobné věci poměrně často. Potřebuju například sledovat výstupy z doménových security logů nebo podle zadaných parametrů průběžně opingávat servery v síti a ukládat výsledek. Používám <a href="http://cz.php.net/manual/en/book.win32service.php" title="http://cz.php.net/manual/en/book.win32service.php">http://cz.php.net/manual/en/book.win32service.php</a>, protože funguju v homogenním Windows prostředí a mám k dispozici vlastní server. Fronta požadavků je v databázi, služba na základě klíčového slova u požadavku ví co má provést a jak naložit s výsledkem. Paměťová náročnost v mezích únosnosti a nárůst vytížení procesorů neznatelný. Takových služeb mi na stejném serveru běží osm nebo devět k všeobecné spokojenosti.<br />
+Nicméně chápu, že to je realizovatelné pouze za předpokladu existence vlastního serveru...</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div><div class="indented"><a id="comment-2849"></a>
+<div class="comment comment-published even">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2849" class="active">Na vlastním stroji to není</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel Arthur Dent dne 10. Březen 2010 - 18:16.      </div>
+
+  <div class="content">
+    <p>Na vlastním stroji to není problém, ale už třeba u "managed serveru" budou možná prskat... :) Ale já to pro jistotu v článku zvýrazním, že mi jde o řešení, použitelné na Normálním Nebo Jen Trochu Lepším hostingu. :)</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div></div><a id="comment-2848"></a>
+<div class="comment comment-published odd">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2848" class="active">Řešil, bohužel nic lepšího</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel <a href="http://www.vas-hosting.cz" rel="nofollow">Karel Dytrych</a> (bez ověření) dne 10. Březen 2010 - 18:14.      </div>
+
+  <div class="content">
+    <p>Řešil, bohužel nic lepšího než CRON + PHP jsem nevymyslel a myslím že v PHP ani nejde...</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div><a id="comment-2850"></a>
+<div class="comment comment-published even">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2850" class="active">Singleton PHP</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel <a href="http://www.jakub-boucek.cz" rel="nofollow">Jakub Bouček</a> (bez ověření) dne 10. Březen 2010 - 18:18.      </div>
+
+  <div class="content">
+    <p>V minulosti jsem toto vyřešil nečistým, ale funkčním způsobem (inspirováno dle způsobu řízení služeb v Linuxu):<br />
+1) Singleton se spustil a zapsal PID procesu do souboru. Do druhého souboru jsem uložil aktuální timestamp. Pokud již soubor PID existoval, tak předtím ověřil, zda proces s daným PID žije a pokud ano, nespustil se.<br />
+2) Singleton běžel v nekonečné smyčce, vždy si počkal 5 sekund a pak juknul do fronty a po vykonání práce zapsal aktuální timestamp do souboru.<br />
+3) Po 60*60 sekundách singleton smazal soubor s PID a timespampem a spustil novou instanci seme sama a sám se ukončil.<br />
+4) Každých 15 minut se pustil kontrolní script, který ověřil, že timestamp není starší než 5 minut a že proces podle PID žije. Pokud ne, zmaže dané souboru (zabije případný zamrzlý singleton) a spustí novou instanci singletonu.</p>
+<p>Fungovalo to úspěšně rok a půl a pak to někdo vyhodil i se serverem.</p>
+<p>Nezjišťoval jsem ale jestli operační systém neposkytuje nějaké nástroje, které by toto zastoupily. Čisté řešení asi neexistuje, ale dá se s tím pracovat.</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div><a id="comment-2851"></a>
+<div class="comment comment-published odd">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2851" class="active">Proč za každou cenu PHP?</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel <a href="http://www.zadirr.cz/" rel="nofollow">zadirr</a> (bez ověření) dne 10. Březen 2010 - 18:40.      </div>
+
+  <div class="content">
+    <p>Já mám sice PHP rád, ale jsou situace kdy si člověk musí přiznat, že každý jazyk se hodí na něco jiného, a že jsou i aplikace, na které se můj oblíbený jazyk nemusí hodit. PHP prostě není určené na takovéhle věci. Proč to dělat zrovna v PHP? Proč ne třeba v JavaScriptu nebo Assembleru?</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div><div class="indented"><a id="comment-2853"></a>
+<div class="comment comment-published even">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2853" class="active">Tak nevím, jestli jsem to</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel Arthur Dent dne 10. Březen 2010 - 18:52.      </div>
+
+  <div class="content">
+    <p>Tak nevím, jestli jsem to nenapsal dostatečně srozumitelně nebo jestli jsem neporozuměl vašemu komentáři... Vy vidíte něco o "zakaždéceně"? To, že to mohu napsat v Perlu, Pythonu nebo v C je jasné asi každému, ale tak otázka nestojí. Otázka nezní "Jak to řešit", ale "lze to vyřešit v PHP?"</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div></div><a id="comment-2852"></a>
+<div class="comment comment-published odd">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2852" class="active">Cron vládne všem, cron je přivede,...</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel Tom (bez ověření) dne 10. Březen 2010 - 18:52.      </div>
+
+  <div class="content">
+    <p>Spouštění démonků (a celkem jedno, jestli je to něco v php, v bashi případně binárka ala imagemagick) na vlastním stroji z cronu se mi taktéž osvědčilo jako univerzálně vhodné řešení na všechno.</p>
+<p>A když už ten stroj běží, tak se jím dají volat i spřátelené skripty na "normálních" hostinzích (omezení třeba dle IP, tokenu, čehokoli) skrze http.</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div><a id="comment-2854"></a>
+<div class="comment comment-published even">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2854" class="active">Fork a sdilena pamet...</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel Gimli2 dne 10. Březen 2010 - 23:12.      </div>
+
+  <div class="content">
+    <p>Kdesi (tusim na builderu) se kdysi objevil takovyto nastrel reseni, kdy potrebujem spustit narocnou ulohu, ale nemuzem nechat uzivatele cekat. Komunikace se zbytkem aplikace (kde by si mezitim uzivatel pracoval) by mohly uspesne resit funkce pro praci se sdilenou pameti (shm_*()) ale otazkou je, zda je ma "prumerny lepsi" hosting povolene.</p>
+<p>---<br />
+&lt;?<br />
+ignore_user_abort(1);<br />
+set_time_limit(0);<br />
+/* fork na jinou stranku */<br />
+Header("Location: /nekam_jinam.html");<br />
+Header("Connection: close\n\n");<br />
+/* donutime jej poslat hlavicku.. */<br />
+echo "neco";<br />
+flush();</p>
+<p>/*** fork proveden */<br />
+/* tady ty narocne vypocty :) */<br />
+for($i=0; $i&lt;3000000; $i++) {/* */};<br />
+/* kontrola ze vse provedeno.. */<br />
+mail("a@b.cz","test","TEST, i=$i");<br />
+?></p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div><div class="indented"><a id="comment-2855"></a>
+<div class="comment comment-published odd">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2855" class="active">To je to, co jsem popsal v</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel Arthur Dent dne 11. Březen 2010 - 0:36.      </div>
+
+  <div class="content">
+    <p>To je to, co jsem popsal v článku zde: <i>"šlo by, že by skript vytvořil nový asynchronní proces na úrovni OS, s nízkou prioritou, a nečekal na jeho dokončení. To je cesta, ale přináší to některé problémy - pokud je zpracování náročné nebo pokud nějak zapisuje do společného prostoru, tak to není nejšťastnější řešení. Procesy se budou hromadit, budou si navzájem překážet, zamykat si přístup..."</i> - akorát se liší v tom, že ten nový proces bude fork se stejnou prioritou. Sejde se, při dostatečné náročnosti výpočtu, takových procesů deset, a už to bude sakra znát.</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div></div><a id="comment-2856"></a>
+<div class="comment comment-published even">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2856" class="active">Asi to bude možno trochu</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel Jozef Sevcik (bez ověření) dne 11. Březen 2010 - 0:48.      </div>
+
+  <div class="content">
+    <p>Asi to bude možno trochu (dosť) overhead na problém, ktorý riešite, ale v praxi som videl práve u projektu videoportálu, kde sa po uploadovaní videa má konvertovať video v pozadí riešenie pomocou Gearman - <a href="http://gearman.org/" title="http://gearman.org/">http://gearman.org/</a>.<br />
+Na servri beží Gearman daemon, ktorý plní v podstate len funkciu queue, beží 1-N dalších workerov (napr. PHP skriptov).<br />
+Web app v prípade, že je treba spustiť task cez Gearman API pošle parametre tasku do queue, queue vyberie voľného workera a predá parametre.<br />
+Má to závislosť na prostredí, t.j. musíte mať možnost spustiť si zo shellu daemon+workerov,<br />
+a nesplňuje Váš požiadavok na spoločný space, na druhú stranu je s tým možné jednoducho v backende manipulovať bez veľkých zásahov do app, tasky sa daju distribuovať na fyzicky oddelené stroje, ich beh nie je závislý na web app atď..</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div><a id="comment-2858"></a>
+<div class="comment comment-published odd">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2858" class="active">Řešil</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel Jindra (bez ověření) dne 11. Březen 2010 - 13:15.      </div>
+
+  <div class="content">
+    <p>Řešil, kombinace CRON + PHP proces to řeší k všeobecné spokojenosti (alespoň u nás).</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div><a id="comment-2859"></a>
+<div class="comment comment-published even">
+  
+  
+  
+  <h3 class="commen-title">
+    <a href="/application-scope-v-php#comment-2859" class="active">K problemu - ne reseni v PHP</a>  </h3>
+
+  <div class="submitted">
+    Napsal uživatel <a href="http://www.easysoftware.cz/" rel="nofollow">David Strejc</a> (bez ověření) dne 14. Březen 2010 - 14:52.      </div>
+
+  <div class="content">
+    <p>Bitblbee + python =&gt; takhle lze mit aplikaci ktera kompletne komunikuje pres ICQ a dokonce si muze pres XML stromy "povidat" s drouhou stranou - nejen davat prispevky do databaze a tak dale.</p>
+ 
+      </div>
+
+  <div class="links">
+      </div>
+</div><form action="/application-scope-v-php"  accept-charset="UTF-8" method="post" id="comment-controls">
+<div>  <div class="box">
+    <h2 class="title">Volby prohlížení komentářů</h2>    <div class="content"><div class="container-inline"><input type="hidden" name="form_build_id" id="form-127d38d409fec1e14a2bc27024107818" value="form-127d38d409fec1e14a2bc27024107818"  />
+<input type="hidden" name="form_id" id="edit-comment-controls" value="comment_controls"  />
+<div class="form-item" id="edit-mode-wrapper">
+ <select name="mode" class="form-select" id="edit-mode" ><option value="1">Bez vláken - sbaleno</option><option value="2">Bez vláken - rozbaleno</option><option value="3">Vlákna - sbalené</option><option value="4" selected="selected">Vlákna - rozbaleno</option></select>
+</div>
+<div class="form-item" id="edit-order-wrapper">
+ <select name="order" class="form-select" id="edit-order" ><option value="1">Datum - od nejnovějších</option><option value="2" selected="selected">Datum - od nejstarších</option></select>
+</div>
+<div class="form-item" id="edit-comments-per-page-wrapper">
+ <select name="comments_per_page" class="form-select" id="edit-comments-per-page" ><option value="10">Počet komentářů na stránce: 10</option><option value="30">Počet komentářů na stránce: 30</option><option value="50">Počet komentářů na stránce: 50</option><option value="70">Počet komentářů na stránce: 70</option><option value="90">Počet komentářů na stránce: 90</option><option value="150">Počet komentářů na stránce: 150</option><option value="200">Počet komentářů na stránce: 200</option><option value="250">Počet komentářů na stránce: 250</option><option value="300" selected="selected">Počet komentářů na stránce: 300</option></select>
+</div>
+<input type="submit" name="op" id="edit-submit" value="Uložit nastavení"  class="form-submit" />
+</div><div class="description">Vyberte si, jak chcete zobrazovat komentáře a klikněte na „Uložit změny“.</div></div>
+ </div>
+
+
+</div></form>
+</div>        <div id="block-disqus-disqus_comments" class="clear-block block block-disqus">
+
+
+  <div class="content"><div id="disqus_thread"></div><noscript><div class="disqus-noscript"><a href="http://misantrop.disqus.com/?url=http%3A%2F%2Fwww.misantrop.cz%2Fnode%2F190">View the discussion thread.</a></div></noscript></div>
+</div>
+              </div><!-- /content -->
+
+      <div id="sidebar-wrapper">
+        <div id="sidebar">
+                    <div id="block-block-21" class="clear-block block block-block">
+
+  <h2 class="title">Nejlevnější Kindle přímo od Amazonu</h2>
+
+  <div class="content"><iframe src="http://rcm.amazon.com/e/cm?t=dein-20&o=1&p=12&l=ur1&category=kindle&banner=1G8SKADPHMSD8H2DVX82&f=ifr" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+<!--iframe src="http://rcm.amazon.com/e/cm?t=dein-20&o=1&p=12&l=ur1&category=kindle&banner=1RR50DN6TK7D02JARP02&f=ifr" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe--></div>
+</div>
+<div id="block-tagadelic-1" class="clear-block block block-tagadelic">
+
+  <h2 class="title">Kategorie</h2>
+
+  <div class="content"><a href="/kategorie/o-hrach" class="tagadelic level4" rel="tag">O hrách</a> 
+<a href="/kategorie/o-hudbe" class="tagadelic level1" rel="tag">O hudbě</a> 
+<a href="/kategorie/o-mne" class="tagadelic level6" rel="tag">O mně</a> 
+<a href="/kategorie/o-mysleni" class="tagadelic level3" rel="tag">O myšlení</a> 
+<a href="/kategorie/o-programovani" class="tagadelic level5" rel="tag">O programování</a> 
+<a href="/kategorie/o-vas" class="tagadelic level6" rel="tag">O vás</a> 
+<a href="/kategorie/o-vecech-verejnych" class="tagadelic level5" rel="tag">O věcech veřejných</a> 
+<a href="/kategorie/o-vsem" class="tagadelic level5" rel="tag">O všem</a> 
+<a href="/kategorie/o-webu" class="tagadelic level6" rel="tag">O webu</a> 
+</div>
+</div>
+<div id="block-block-18" class="clear-block block block-block">
+
+
+  <div class="content"><!-- Kontextová reklama Sklik -->
+<div id="sklikReklama_1993"></div>
+<script type="text/javascript">
+    var sklikData = { elm: "sklikReklama_1993", zoneId: 1993, w: 250, h: 250 };
+</script>
+<script type="text/javascript" src="http://out.sklik.cz/js/script.js"></script></div>
+</div>
+<div id="block-block-13" class="clear-block block block-block">
+
+  <h2 class="title">Stručný Misantrop</h2>
+
+  <div class="content"><div class="item-list"><ul><li><div class="my-twitter-status"><a href="http://feedproxy.google.com/~r/strucny-misantrop/~3/iFDwMQVkLHQ/citat-k-diskusim-na-obsahovem-webu">Citát k diskusím na obsahovém webu</a></div><div class="my-twitter-status-time">Před 3 dny 6 hod</div></li><li><div class="my-twitter-status"><a href="http://feedproxy.google.com/~r/strucny-misantrop/~3/sJWGrS-latE/uveritelne-dojeti-na-dve-kliknuti-mysi">Uvěřitelné dojetí na dvě kliknutí myši?</a></div><div class="my-twitter-status-time">Před 1 týden 2 dny</div></li><li><div class="my-twitter-status"><a href="http://feedproxy.google.com/~r/strucny-misantrop/~3/BPoHnhRx570/jak-vodafonecz-prijde-o-zakaznika">Jak @vodafone_cz přijde o zákazníka...</a></div><div class="my-twitter-status-time">Před 2 týdny 2 dny</div></li><li><div class="my-twitter-status"><a href="http://feedproxy.google.com/~r/strucny-misantrop/~3/5UBzV47S_AU/twitter-neni-pro-slaby-jedince">Twitter není pro slabý jedince...</a></div><div class="my-twitter-status-time">Před 3 týdny 1 den</div></li><li><div class="my-twitter-status"><a href="http://feedproxy.google.com/~r/strucny-misantrop/~3/X4iT5Zi_eXs/co-by-mel-vedet-kazdy-provozovatel-e-shopu">Co by měl vědět každý provozovatel e-shopu?</a></div><div class="my-twitter-status-time">Před 4 týdny 5 hod</div></li></ul></div></div>
+</div>
+<div id="block-menu-secondary-links" class="clear-block block block-menu">
+
+  <h2 class="title">Oblíbené odkazy</h2>
+
+  <div class="content"><ul class="menu"><li class="leaf first"><a href="http://blok.rozanek.cz" title="">Blok Filipa Rožánka</a></li>
+<li class="leaf"><a href="http://www.machinegun.cz/" title="">Johnny</a></li>
+<li class="leaf"><a href="http://www.katchaba.com/" title="">Katchaba</a></li>
+<li class="leaf"><a href="http://stene.grafova.eu/" title="">Novinářské štěně</a></li>
+<li class="leaf"><a href="http://ideesfixes.blogspot.com/" title="">Petr Koubský</a></li>
+<li class="leaf"><a href="http://www.bloc.cz/default.aspx" title="">Bloc Jiřího Hlavenky</a></li>
+<li class="leaf"><a href="http://pooh.cz/pooh" title="">Dan Dočekal</a></li>
+<li class="leaf"><a href="http://www.uuid.cz" title="Unikátní identifikátor na počkání">UUID</a></li>
+<li class="leaf"><a href="http://davebarry.cz/" title="">Dave Barry česky</a></li>
+<li class="leaf"><a href="http://apimania.eu/" title="">Apimania</a></li>
+<li class="leaf"><a href="http://www.uelectronics.info/" title="">Mikroelektronika</a></li>
+<li class="leaf"><a href="http://www.php-suit.com/" title="">PHP suit</a></li>
+<li class="leaf"><a href="http://www.dailyrazor.com/affiliate/idevaffiliate.php?id=2651_4_3_7" title="... od 30 Kč měsíčně">Hosting pro Ruby on Rails</a></li>
+<li class="leaf"><a href="http://www.dailyrazor.com/affiliate/idevaffiliate.php?id=2651_2_3_4" title="">Hosting JSP+TomCat</a></li>
+<li class="leaf"><a href="http://www.dailyrazor.com/affiliate/idevaffiliate.php?id=2651_3_3_1" title="">Hosting pro .NET</a></li>
+<li class="leaf"><a href="http://www.zdrojak.cz" title="">Zdroják - magazín pro vývojáře webových aplikací</a></li>
+<li class="leaf"><a href="http://www.smartcompanies.cz/ready-made-spolecnosti/" title="Prodej ready made společností s.r.o. a a.s.">Ready made společnosti</a></li>
+<li class="leaf last"><a href="http://www.smart-office.cz/virtualni-kancelar/" title="Virtuální kanceláře a poskytování sídel">Virtuální kanceláře</a></li>
+</ul></div>
+</div>
+<div id="block-gtranslate-0" class="clear-block block block-gtranslate">
+
+  <h2 class="title">GTranslate</h2>
+
+  <div class="content"><script type="text/javascript" src="/modules/gtranslate/gtranslate-files/jquery-translate.js"></script><script type="text/javascript">
+//<![CDATA[
+if(jQuery.cookie('glang') && jQuery.cookie('glang') != 'cs') jQuery(function($){$('body').translate('cs', $.cookie('glang'), {not:'.notranslate', toggle:true});});
+//]]>
+</script><script type="text/javascript">//<![CDATA[
+function doTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;var lang=lang_pair.split('|')[1];jQuery.cookie('glang', lang, {path: '/'});jQuery(function($){$('body').translate('cs', lang, {not:'.notranslate', toggle:true})});}
+//]]>
+</script><style type="text/css">
+<!--
+a.gtflag {background-image:url('/modules/gtranslate/gtranslate-files/16a.png');}
+a.gtflag:hover {background-image:url('/modules/gtranslate/gtranslate-files/16.png');}
+-->
+</style><a href="javascript:doTranslate('cs|fr')" title="French" class="gtflag" style="font-size:16px;padding:1px 0;background-repeat:no-repeat;background-position:-200px -100px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" style="border:0;vertical-align:top;" alt="French" /></a> <a href="javascript:doTranslate('cs|de')" title="German" class="gtflag" style="font-size:16px;padding:1px 0;background-repeat:no-repeat;background-position:-300px -100px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" style="border:0;vertical-align:top;" alt="German" /></a> <a href="javascript:doTranslate('cs|it')" title="Italian" class="gtflag" style="font-size:16px;padding:1px 0;background-repeat:no-repeat;background-position:-600px -100px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" style="border:0;vertical-align:top;" alt="Italian" /></a> <a href="javascript:doTranslate('cs|pt')" title="Portuguese" class="gtflag" style="font-size:16px;padding:1px 0;background-repeat:no-repeat;background-position:-300px -200px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" style="border:0;vertical-align:top;" alt="Portuguese" /></a> <a href="javascript:doTranslate('cs|ru')" title="Russian" class="gtflag" style="font-size:16px;padding:1px 0;background-repeat:no-repeat;background-position:-500px -200px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" style="border:0;vertical-align:top;" alt="Russian" /></a> <a href="javascript:doTranslate('cs|es')" title="Spanish" class="gtflag" style="font-size:16px;padding:1px 0;background-repeat:no-repeat;background-position:-600px -200px;"><img src="/modules/gtranslate/gtranslate-files/blank.png" height="16" width="16" style="border:0;vertical-align:top;" alt="Spanish" /></a> <select onchange="doTranslate(this);"><option value="">Select Language</option><option value="cs|cs" style="font-weight:bold;background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -96px;padding-left:18px;">Czech</option><option value="cs|af" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -688px;padding-left:18px;">Afrikaans</option><option value="cs|sq" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -560px;padding-left:18px;">Albanian</option><option value="cs|ar" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -16px;padding-left:18px;">Arabic</option><option value="cs|be" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -768px;padding-left:18px;">Belarusian</option><option value="cs|bg" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -32px;padding-left:18px;">Bulgarian</option><option value="cs|ca" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -384px;padding-left:18px;">Catalan</option><option value="cs|zh-CN" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -48px;padding-left:18px;">Chinese (Simplified)</option><option value="cs|zh-TW" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -64px;padding-left:18px;">Chinese (Traditional)</option><option value="cs|hr" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -80px;padding-left:18px;">Croatian</option><option value="cs|da" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -112px;padding-left:18px;">Danish</option><option value="cs|nl" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -128px;padding-left:18px;">Dutch</option><option value="cs|en" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -0px;padding-left:18px;">English</option><option value="cs|et" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -576px;padding-left:18px;">Estonian</option><option value="cs|tl" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -400px;padding-left:18px;">Filipino</option><option value="cs|fi" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -144px;padding-left:18px;">Finnish</option><option value="cs|fr" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -160px;padding-left:18px;">French</option><option value="cs|gl" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -592px;padding-left:18px;">Galician</option><option value="cs|de" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -176px;padding-left:18px;">German</option><option value="cs|el" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -192px;padding-left:18px;">Greek</option><option value="cs|iw" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -416px;padding-left:18px;">Hebrew</option><option value="cs|hi" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -208px;padding-left:18px;">Hindi</option><option value="cs|hu" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -608px;padding-left:18px;">Hungarian</option><option value="cs|is" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -784px;padding-left:18px;">Icelandic</option><option value="cs|id" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -432px;padding-left:18px;">Indonesian</option><option value="cs|ga" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -736px;padding-left:18px;">Irish</option><option value="cs|it" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -224px;padding-left:18px;">Italian</option><option value="cs|ja" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -240px;padding-left:18px;">Japanese</option><option value="cs|ko" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -256px;padding-left:18px;">Korean</option><option value="cs|lv" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -448px;padding-left:18px;">Latvian</option><option value="cs|lt" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -464px;padding-left:18px;">Lithuanian</option><option value="cs|mk" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -800px;padding-left:18px;">Macedonian</option><option value="cs|ms" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -704px;padding-left:18px;">Malay</option><option value="cs|mt" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -624px;padding-left:18px;">Maltese</option><option value="cs|no" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -272px;padding-left:18px;">Norwegian</option><option value="cs|fa" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -672px;padding-left:18px;">Persian</option><option value="cs|pl" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -288px;padding-left:18px;">Polish</option><option value="cs|pt" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -304px;padding-left:18px;">Portuguese</option><option value="cs|ro" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -320px;padding-left:18px;">Romanian</option><option value="cs|ru" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -336px;padding-left:18px;">Russian</option><option value="cs|sr" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -480px;padding-left:18px;">Serbian</option><option value="cs|sk" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -496px;padding-left:18px;">Slovak</option><option value="cs|sl" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -512px;padding-left:18px;">Slovenian</option><option value="cs|es" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -352px;padding-left:18px;">Spanish</option><option value="cs|sw" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -720px;padding-left:18px;">Swahili</option><option value="cs|sv" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -368px;padding-left:18px;">Swedish</option><option value="cs|th" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -640px;padding-left:18px;">Thai</option><option value="cs|tr" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -656px;padding-left:18px;">Turkish</option><option value="cs|uk" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -528px;padding-left:18px;">Ukrainian</option><option value="cs|vi" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -544px;padding-left:18px;">Vietnamese</option><option value="cs|cy" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -752px;padding-left:18px;">Welsh</option><option value="cs|yi" style="background:url('/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -816px;padding-left:18px;">Yiddish</option></select></div>
+</div>
+<div id="block-block-2" class="clear-block block block-block">
+
+  <h2 class="title">Jak se vám to čte?</h2>
+
+  <div class="content"><!--script src="http://tweetboard.com/tb.js?v=1.0&user=jdemcz" type="text/javascript"></script-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">/* <![CDATA[ */
+document.write("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); /* ]]> */
+</script>
+
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+
+
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a>
+
+
+<a href="http://www.webarchiv.cz/files/vydavatele/certifikat.html" onclick="return !window.open(this, 'kod', 'toolbar=no, menubar=no, directories=no, resizable=yes, status=no, width=600, height=210, top=200, left=50')" ><img title="STRÁNKY ARCHIVOVÁNY NÁRODNÍ KNIHOVNOU ČR" style="border:none; width:64px; height:auto" oncontextmenu="return false" src="http://www.webarchiv.cz/images/webarchiv_certifikat_cb.gif" /></a>  </div>
+</div>
+<div id="block-block-10" class="clear-block block block-block">
+
+  <h2 class="title">Aby bylo jasno...</h2>
+
+  <div class="content"><ul style="font-size:80%">
+<li>Ročník: <strong>1973</strong></li>
+<li>Levice/pravice: <strong>PRAVICE</strong></li>
+<li>Ekonomika: <strong>LIBERÁL</strong></li>
+<li>Radar: <strong>PRO</strong></li>
+<li>Temelín: <strong>PRO</strong></li>
+<li>Boj proti oteplení: <strong>PROTI</strong></li>
+<li>Aktivisti: <strong>PROTI</strong></li>
+<li>NGO: <strong>PROTI</strong></li>
+<li>Lisabonská smlouva: <strong>PROTI</strong></li>
+<li>Brusel: <strong>PROTI</strong></li>
+<li>30 Kč poplatek: <strong>PRO</strong></li>
+<li>ČSSD: <strong>NE</strong></li>
+<li>KSČM: <strong>NE</strong></li>
+<li>ODS: <strong>NE</strong></li>
+<li>Lidovci: <strong>NE</strong></li>
+<li>Zelení: <strong>NE</strong></li>
+<li>Národovci: <strong>NE</strong></li>
+<li>Cesty změny: <strong>NE</strong></li>
+<li>Jiné pravdy a lásky: <strong>PROBŮH, NE</strong></li>
+<li>Klaus: <strong>NEVADÍ</strong></li>
+<li>Paroubek: <strong>VADÍ</strong></li>
+<li>Izrael/Palestina: <strong>SPÍŠ IZRAEL</strong></li>
+<li>Praha/Brno: <strong>PRAHA</strong></li>
+<li>Sparta/Slávie: <strong>NEZÁJEM</strong></li>
+<li>Mazání komentářů: <strong>PRO</strong></li>
+<li>Plat ředitele ČEZu: <strong>NEZAJÍMÁ</strong></li>
+</ul>
+</div>
+</div>
+<div id="block-system-0" class="clear-block block block-system">
+
+
+  <div class="content"><a href="http://drupal.org"><img src="/misc/powered-blue-80x15.png" alt="Běží na Drupalu, open-source redakčním systému" title="Běží na Drupalu, open-source redakčním systému" width="80" height="15" /></a></div>
+</div>
+        </div><!-- /sidebar -->
+      </div><!-- /sidebar-wrapper -->
+      
+      <div id="footer">
+                <div id="block-block-1" class="clear-block block block-block">
+
+
+  <div class="content"><p>&copy; <a href="http://www.maly.cz/">Martin Malý</a> (aka Arthur Dent) | <a href="http://hostmonster.jdem.cz">HOSTING by Hostmonster</a></p>
+<!-- script type="text/javascript" src="http://tcr.tynt.com/javascripts/Tracer.js?user=dQaUSsGb4r3RkTab7jrHcU&s=61"></script --><!-- script type="text/javascript" src="http://tcr.tynt.com/javascripts/Tracer.js?user=dQaUSsGb4r3RkTab7jrHcU&s=61"></script --></div>
+</div>
+<div id="block-block-20" class="clear-block block block-block">
+
+
+  <div class="content"><!-- Kontextová reklama Sklik --><!-- Kontextová reklama Sklik --><div id="sklikReklama_2331"></div>
+<script type="text/javascript">
+    var sklikData = { elm: "sklikReklama_2331", zoneId: 2331, w: 950, h: 90 };
+</script><script type="text/javascript" src="http://out.sklik.cz/js/script.js"></script></div>
+</div>
+      </div><!-- /footer -->
+    </div><!-- /container -->
+    <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+da2a.targets=[
+{title:'Application scope v PHP',url:'http://www.misantrop.cz/application-scope-v-php'}];
+da2a.html_done=true;if(da2a.script_ready&&!da2a.done)da2a.init();da2a.script_load();
+//--><!]]>
+</script>
+  </body>
+</html>
