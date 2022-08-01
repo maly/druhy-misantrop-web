@@ -1,0 +1,24 @@
+ * IE fixes for Barron
+ */
+
+#nav li a {
+	border: none;
+	color: #ccc;
+	font-weight: normal;
+	line-height: 1.8em;
+	padding: 6px 10px;
+	text-decoration:none;
+}
+
+
+#nav li a:hover,
+#nav li a.active {
+	background: #7B0505 none repeat;
+	border: none;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	color: #fff;
+	line-height: 1.8em;
+	padding-left: 9px;
+	padding-right: 9px;
+}
